@@ -27,3 +27,20 @@ Waveshare-Arduino-2/                       ← new project folder (git init here
     └── extras/                            (optional)
         ├── User_Setup_TFT_eSPI_4inch.h    ← your ILI9486 + XPT2046 config
         └── lv_conf.h                      ← LVGL configuration
+
+Current Build Steps (TBD):
+
+$ pio run --target clean               # optional: clear any old cached state
+$ pio pkg update                       # downloads/updates the libraries
+
+$ pio run --target clean -e mega2560-waveshare
+$ pio run --target clean -e unor4wifi-tftespi
+
+$ pio run -e mega2560-waveshare        # try to build (should now parse the ini correctly)
+$ pio run -e unor4wifi-tftespi
+
+To load the firmware in the correct board use:
+
+$ pio run -e mega2560-waveshare -t upload
+$ pio run -e unor4wifi-tftespi  -t upload
+
